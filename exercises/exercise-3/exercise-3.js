@@ -41,9 +41,7 @@ const orderReceipt = () => {
 };
 };
 
-
 orderReceipt(order);
 
+console.log(`\nTotal: ${total.toFixed(2)}`);
 
-
-console.log(`\nTotal: ${total}`);
