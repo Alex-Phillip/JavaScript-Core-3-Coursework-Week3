@@ -1,3 +1,4 @@
+
 /* - In `exercise-3.js`, you have been provided with a takeout order. Write a program that will print out the
 receipt for this order. */
 // - Log each individual item to the console.
@@ -25,10 +26,24 @@ let order = [
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
 
-const orderReceipt = (itemName, quantity, unitPrice) => {
+console.log(`QTY\t ITEM\t\t\t TOTAL`);
+
+let total = 0;
+
+const orderReceipt = () => {
   for (const {itemName, quantity, unitPrice} of order) {
-    console.log(`${quantity} ${itemName} ${unitPrice}`);
+    if (itemName.length < 14) {
+    console.log(`${quantity}\t ${itemName}\t\t ${(unitPrice * quantity).toFixed(2)}`);
+  } else {
+    console.log(`${quantity}\t ${itemName}\t ${(unitPrice * quantity).toFixed(2)}`);
   };
+  total += unitPrice * quantity;
+};
 };
 
+
 orderReceipt(order);
+
+
+
+console.log(`\nTotal: ${total}`);
